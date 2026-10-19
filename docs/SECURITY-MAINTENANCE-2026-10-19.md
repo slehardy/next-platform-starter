@@ -4,7 +4,7 @@ Dependency alerts and supported automatic security update PRs are enabled in Git
 
 The updated lockfile audit reports 0 critical, 5 high and 0 moderate package entries. These are dependency-chain entries, not independent exploits or proof of production exposure.
 
-Remaining findings depend on upstream braces and, in sam.ai, sprintf-js. The registry has no patched release in the currently supported dependency lines. Do not force npm’s proposed framework, ESLint or gray-matter downgrades to hide these findings. Keep monitoring the advisories and validate compatible upstream fixes when available.
+The remaining findings come from braces through this repository’s ESLint tooling chain. No patched braces release is available in the registry. Do not downgrade the Next.js lint configuration merely to suppress those findings; monitor compatible upstream fixes and validate them when available.
 
 Next.js is updated to 16.3.8 with React 19.2.8. The removed next lint command is replaced by flat-config ESLint. Cached-image size measurement runs on the next animation frame and cancels on unmount. The public main branch blocks deletion and force pushes. No external hosting connection was changed.
 
