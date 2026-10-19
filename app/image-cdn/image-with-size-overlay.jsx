@@ -18,7 +18,10 @@ export function ImageWithSizeOverlay({ src, srcSet, sizes, overlayPosition }) {
     }, []);
 
     useEffect(() => {
-        handleImageLoad();
+        // Cached images may finish before React attaches onLoad. Measure after
+        // the first paint, and cancel the pending callback on unmount.
+        const frame = requestAnimationFrame(handleImageLoad);
+        return () => cancelAnimationFrame(frame);
     }, [handleImageLoad]);
 
     return (
